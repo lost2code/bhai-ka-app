@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Bhai</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Welcome, Bhai!</h1>
+    <p>Yeh tera app hai, chal greet karne chalte hain!</p>
+	
+	<h3 th:text="${addednames}"></h3>
+	<ul>
+			<li th:each="user : ${users}" th:text="${user.name}"></li>	
+			</ul>
+    <a href="/greet">Go to Greet Page</a>
+</body>
+</html>
