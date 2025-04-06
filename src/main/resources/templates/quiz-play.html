@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .question { margin-bottom: 20px; }
+        .option { margin: 5px 0; }
+        button { padding: 5px 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1 th:text="${quiz.title}"></h1>
+    <div class="question">
+        <p th:text="${#lists.get(quiz.questions, 0).text}"></p> <!-- First question -->
+        <div class="option"><input type="radio" name="answer"> <span th:text="${#lists.get(quiz.questions, 0).option1}"></span></div>
+        <div class="option"><input type="radio" name="answer"> <span th:text="${#lists.get(quiz.questions, 0).option2}"></span></div>
+        <div class="option"><input type="radio" name="answer"> <span th:text="${#lists.get(quiz.questions, 0).option3}"></span></div>
+        <div class="option"><input type="radio" name="answer"> <span th:text="${#lists.get(quiz.questions, 0).option4}"></span></div>
+        <button>Next</button>
+    </div>
+</body>
+</html>

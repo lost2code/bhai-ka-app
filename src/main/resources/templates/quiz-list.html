@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bhai Ka Quiz</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .quiz-card { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .quiz-card a { text-decoration: none; color: #007bff; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Bhai Ka Quiz!</h1>
+    <div th:each="quiz : ${quizzes}" class="quiz-card">
+        <h3 th:text="${quiz.title}"></h3>
+        <p><strong>Category:</strong> <span th:text="${quiz.category}"></span></p>
+        <a th:href="@{'/quiz/' + ${quiz.id}}">Start Quiz</a>
+    </div>
+</body>
+</html>
