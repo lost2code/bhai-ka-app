@@ -18,7 +18,7 @@ public class quiz {
     private String title;
     private String category;
 
-    @OneToMany
+    @OneToMany(cascade = jakarta.persistence.CascadeType.ALL)
     private List<question> questions;
 
     // Getters and Setters

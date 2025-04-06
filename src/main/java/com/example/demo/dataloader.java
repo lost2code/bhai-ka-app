@@ -30,6 +30,7 @@ public class dataloader implements CommandLineRunner {
         q1.setOption3("Kolkata");
         q1.setOption4("Chennai");
         q1.setCorrectAnswer("option2");
+        questionRepository.save(q1);
 
         question q2 = new question();
         q2.setText("Which planet is known as the Red Planet?");
@@ -38,6 +39,7 @@ public class dataloader implements CommandLineRunner {
         q2.setOption3("Jupiter");
         q2.setOption4("Venus");
         q2.setCorrectAnswer("option2");
+        questionRepository.save(q2);
 
         quiz.setQuestions(Arrays.asList(q1, q2));
         quizRepository.save(quiz);
